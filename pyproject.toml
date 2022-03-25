@@ -1,0 +1,10 @@
+[tool.black]
+line-length = 120
+
+[tool.isort]
+line_length = 120
+
+
+[tool.pylint.messages_control]
+max-line-length = 120
+disable = ["C0330","W0621","C0103","W0707","W0511","C0114","C0301","C0116","W1404","C0115","W120","C0115","W1203"]

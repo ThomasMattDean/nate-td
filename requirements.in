@@ -1,0 +1,12 @@
+beautifulsoup4
+black
+fastapi
+isort
+mypy
+pylint
+pytest
+requests
+types-requests
+uvicorn
+validators
+pytest-cov
