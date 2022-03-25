@@ -13,20 +13,20 @@ It is recommended to run the project with Docker. To do so you will need Docker 
 
 If you want to run the project without Docker you will need the following:
 
-- python3.9.7
+- python 3.9.7
 - pip
-- pip-tools (which can be installed with `pip install pip-tools`)
+- pip-tools (which can be installed with `pip install pip-tools==6.5.1`)
 
 ## Installation & Usage
 
-To run without Docker:
+To run with Docker:
 
 ```sh
 # build the Docker image
 make docker-build
 # run the api
 make docker-run
-# while docker is running, check the api is running by opening the following in a brower
+# while docker is running, check the api is running by opening the following in a browser
 http://0.0.0.0/health
 # navigate to a url such as bbc news
 http://0.0.0.0/urls?url=https://www.bbc.co.uk/news
@@ -45,7 +45,7 @@ To run without Docker:
 make pip-sync
 # run the api
 make run
-# pass a url
+# while the api is running, pass a url
 http://127.0.0.1:8000/urls?url=https://www.bbc.co.uk/news
 # view the docs
 http://127.0.0.1:8000/docs
@@ -53,7 +53,9 @@ http://127.0.0.1:8000/docs
 
 ## Testing
 
-If you have followed the previous step tests can be run with Docker:
+You will need to complete the relevant installation steps above before running the tests.
+
+Tests can be run either with Docker:
 
 ```sh
 make docker-run-tests
@@ -68,7 +70,7 @@ make tests
 ## Details
 
 - The [validators](https://validators.readthedocs.io/en/latest/) package is used to validate urls. Any urls not judged to be valid by the definition provided in these docs will return an error.
-- Numbers such as '4' and phrases such as '4hr' are treated as words.
+- Numbers such as '4' and phrases such as '4hr' are treated as words as will any misspellings.
 - Only ascii based text is currently supported, any non ascii characters will be removed and no error will be raised.
 - The symbol '&' and the word 'and' have a combined score, returned as 'and'.
 - The top fifty words are retrieved and are returned in descending order of occurrences.
@@ -85,3 +87,4 @@ make tests
 - Investigate reliability of BeautifulSoup and Validators
 - Find a more elegant solution to `remove_quotes`
 - Expand testing of `processing` especially `test_process_url` - use a wider range of source docs
+- Modify processing so it operates a the level of an individual word rather than one string
