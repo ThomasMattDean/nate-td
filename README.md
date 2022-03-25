@@ -26,8 +26,8 @@ To run without Docker:
 make docker-build
 # run the api
 make docker-run
-# check the api is running
-http://0.0.0.0/ping
+# while docker is running, check the api is running by opening the following in a brower
+http://0.0.0.0/health
 # navigate to a url such as bbc news
 http://0.0.0.0/urls?url=https://www.bbc.co.uk/news
 # or a wikipedia article
