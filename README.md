@@ -34,6 +34,8 @@ http://0.0.0.0/urls?url=https://www.bbc.co.uk/news
 http://0.0.0.0/urls?url=https://en.wikipedia.org/wiki/Python_(programming_language)
 # or a new site
 http://0.0.0.0/urls?url=https://techcrunch.com/
+# view the docs
+http://0.0.0.0/docs
 ```
 
 To run without Docker:
@@ -42,9 +44,11 @@ To run without Docker:
 # install requirements
 make pip-sync
 # run the api
-uvicorn src.main:app
+make run
 # pass a url
 http://127.0.0.1:8000/urls?url=https://www.bbc.co.uk/news
+# view the docs
+http://127.0.0.1:8000/docs
 ```
 
 ## Testing

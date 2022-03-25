@@ -6,6 +6,8 @@ lint:
 tests:
 	pytest . -v
 
+run:
+	uvicorn src.main:app
 
 test-coverage:
 	pytest --cov-report term-missing --cov=src .
